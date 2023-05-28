@@ -1,0 +1,58 @@
+@host = localhost:8080
+
+###
+
+// Create Product
+< {%
+    request.variables.set("host", "localhost:8080")
+%}
+POST http://{{host}}/api/ports HTTP/1.1
+content-type: application/json
+
+{
+  "name": "test-product",
+  "description": "random-description",
+  "price": 100.00
+}
+
+###
+
+// Get Product By ID
+< {%
+    request.variables.set("host", "localhost:8080")
+%}
+GET http://{{host}}/api/ports/23 HTTP/1.1
+content-type: application/json
+
+###
+
+// Get All Products
+< {%
+    request.variables.set("host", "localhost:8080")
+%}
+GET http://{{host}}/api/ports/ HTTP/1.1
+content-type: application/json
+
+###
+
+// Update Product
+< {%
+    request.variables.set("host", "localhost:8080")
+%}
+PUT http://{{host}}/api/ports/2 HTTP/1.1
+content-type: application/json
+
+{
+  "name": "updated-product",
+  "description": "random-description-updated",
+  "price": 100.00
+}
+
+###
+
+// Delete Product
+< {%
+    request.variables.set("host", "localhost:8080")
+%}
+DELETE http://{{host}}/api/ports/2 HTTP/1.1
+content-type: application/json

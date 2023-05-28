@@ -1,0 +1,4 @@
+{
+  "connection_string": "root:rootPass@tcp(127.0.0.1:3306)/portdb",
+  "port": 8080
+}
